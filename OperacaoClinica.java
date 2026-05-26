@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import Veiculos.Veiculo;
 import enums.Status;
 import interfaces.*;
+import veiculos.Veiculo;
 
 abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Priorizavel, Rastreavel {
     private int codigo;

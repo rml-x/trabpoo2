@@ -1,4 +1,4 @@
-package Veiculos;
+package veiculos;
 public abstract class Veiculo {
    private String placa;
    private String modelo;
@@ -22,6 +22,9 @@ public abstract class Veiculo {
     public double getCapacidadeKg(){
         return capacidadeKg;
     }
+    public boolean isDisponivel(){
+        return disponivel;
+   }
 
 
     //metodos
@@ -31,9 +34,7 @@ public abstract class Veiculo {
    public void liberar(){
         disponivel =  true;
    }
-   public boolean isDisponivel(){
-        return disponivel;
-   }
+   
 
 
 }
