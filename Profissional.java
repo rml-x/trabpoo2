@@ -1,3 +1,5 @@
+import enums.TipoProfissional;
+
 public class Profissional {
     private String nome;
     private int registro;

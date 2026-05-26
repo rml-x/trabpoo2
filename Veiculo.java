@@ -1,10 +1,10 @@
 abstract class Veiculo {
    private String placa;
    private String modelo;
-   private int capacidadeKg;
+   private double capacidadeKg;
    private boolean disponivel;
 
-   public Veiculo(String placa, String modelo, int capacidadeKg){
+   public Veiculo(String placa, String modelo, double capacidadeKg){
         this.placa = placa;
         this.modelo = modelo;
         this.capacidadeKg = capacidadeKg;
@@ -18,7 +18,7 @@ abstract class Veiculo {
     public String getPlaca(){
         return placa;
     }
-    public int getCapacidadeKg(){
+    public double getCapacidadeKg(){
         return capacidadeKg;
     }
 
