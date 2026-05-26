@@ -65,7 +65,7 @@ abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Prior
 
     //setters
     public void designarVeiculo(Veiculo veiculo){
-        if (veiculo.disponivel == true) {
+        if (veiculo.isDisponivel()) {
             veiculo.ocupar();
         } else {
             throw new RuntimeException("Não é possivel designar o veiculo pedido");
