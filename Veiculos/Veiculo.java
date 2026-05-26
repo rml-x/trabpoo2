@@ -1,4 +1,5 @@
-abstract class Veiculo {
+package Veiculos;
+public abstract class Veiculo {
    private String placa;
    private String modelo;
    private double capacidadeKg;
