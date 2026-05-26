@@ -64,14 +64,11 @@ abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Prior
     }
 
     //setters
-    public void setVeiculo(Veiculo veiculo){
-        this.veiculo = veiculo;
-    }
-    public void setEquipe(List<Profissional> equipeList) {
-        if (equipeList == null) {
-            this.equipe = new ArrayList<>(); // Evita NullPointerException
+    public void designarVeiculo(Veiculo veiculo){
+        if (veiculo.disponivel == true) {
+            veiculo.ocupar();
         } else {
-            this.equipe = new ArrayList<>(equipeList); // Copia os dados
+            throw new RuntimeException("Não é possivel designar o veiculo pedido");
         }
     }
     
