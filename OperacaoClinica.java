@@ -8,7 +8,7 @@ import interfaces.*;
 import veiculos.Veiculo;
 
 abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Priorizavel, Rastreavel {
-    private int codigo;
+    private int codigo; // pq n usar UID?
     private String origem;
     private String destino;
     private double distanciaKm;
