@@ -7,7 +7,7 @@ import enums.NivelClinico;
 public class RemocaoPaciente extends OperacaoClinica{
 
     private String NomePaciente;
-    private int idade;
+    private int Idade;
     private NivelClinico Nivel;
     private boolean PrecisaOxigenio;
     private boolean PrecisaUtiMovel;
@@ -17,6 +17,26 @@ public class RemocaoPaciente extends OperacaoClinica{
     LocalDateTime dataHoraSolicitacao) {
         
         super(codigo, origem, destino, distanciaKm, solicitante, dataHoraSolicitacao);
+    }
+
+
+    public String getNomePaciente(){
+        return NomePaciente;
+    }
+    public int getIdade(){
+        return Idade;
+    }
+    public NivelClinico getNivel(){
+        return Nivel;
+    }
+    public boolean isPrecisaOxigenio(){
+        return PrecisaOxigenio;
+    }
+    public boolean isPrecisaUtiMovel(){
+        return PrecisaUtiMovel;
+    }
+    public boolean isPrecisaMedicoAcompanhante(){
+        return PrecisaMedicoAcompanhante;
     }
 
     @Override
@@ -41,7 +61,7 @@ public class RemocaoPaciente extends OperacaoClinica{
 
     @Override
     public boolean validar() {
-        
+
     }
 
 
