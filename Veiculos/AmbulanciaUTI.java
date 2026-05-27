@@ -3,14 +3,14 @@ package veiculos;
 public class AmbulanciaUTI extends Veiculo{
     private boolean respirador;
     private boolean monitorCardiaco;
-    private boolean mediaFixa;
+    private boolean equipeMediaFixa ;
 
     
-    public AmbulanciaUTI(String placa, String modelo, double capacidadeKg, boolean respirador, boolean monitorCardiaco, boolean mediaFixa) {
+    public AmbulanciaUTI(String placa, String modelo, double capacidadeKg, boolean respirador, boolean monitorCardiaco, boolean equipeMediaFixa ) {
         super(placa, modelo, capacidadeKg);
         this.respirador = respirador;
         this.monitorCardiaco = monitorCardiaco;
-        this.mediaFixa = mediaFixa;
+        this.equipeMediaFixa  = equipeMediaFixa ;
     }
 
     public boolean isRespirador(){
@@ -19,8 +19,8 @@ public class AmbulanciaUTI extends Veiculo{
     public boolean isMonitorCardiaco(){
         return monitorCardiaco;
     }
-    public boolean isMediaFixa(){
-        return mediaFixa;
+    public boolean isEquipeMediaFixa (){
+        return equipeMediaFixa ;
     }
 
 
