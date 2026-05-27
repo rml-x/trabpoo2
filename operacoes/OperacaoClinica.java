@@ -1,3 +1,4 @@
+package operacoes;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -5,6 +6,7 @@ import java.util.List;
 
 import enums.Status;
 import interfaces.*;
+import profissional.Profissional;
 import veiculos.Veiculo;
 
 abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Priorizavel, Rastreavel {

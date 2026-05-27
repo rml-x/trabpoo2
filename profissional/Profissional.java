@@ -1,3 +1,4 @@
+package profissional;
 import enums.TipoProfissional;
 
 public class Profissional {

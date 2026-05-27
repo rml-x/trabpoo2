@@ -2,21 +2,21 @@ package veiculos;
 
 public class UtilitarioDeCarga extends Veiculo{
 
-    private double LitrosMax;
-    private boolean Rampa;
+    private double litrosMax;
+    private boolean rampa;
 
-    public UtilitarioDeCarga(String placa, String modelo, double capacidadeKg, double LitrosMax, boolean Rampa) {
+    public UtilitarioDeCarga(String placa, String modelo, double capacidadeKg, double litrosMax, boolean rampa) {
         super(placa, modelo, capacidadeKg);
-        this.LitrosMax = LitrosMax;
-        this.Rampa = Rampa;
+        this.litrosMax = litrosMax;
+        this.rampa = rampa;
 
     }
 
-    public double LitrosMax(){
-        return LitrosMax;
+    public double getLitrosMax(){
+        return litrosMax;
     }
-    public boolean Rampa(){
-        return Rampa;
+    public boolean getRampa(){
+        return rampa;
     }
 
     
