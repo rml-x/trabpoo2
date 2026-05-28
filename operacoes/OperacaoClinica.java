@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import enums.NivelClinico;
 import enums.Status;
+import enums.TipoProfissional;
 import interfaces.*;
 import profissional.Profissional;
 import veiculos.Veiculo;
@@ -112,6 +114,18 @@ abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Prior
         } else {
             throw new RuntimeException("Operação não pode ser cancelada no estado atual");
         }
+    }
+
+
+    protected boolean equipeContem(TipoProfissional tipo){
+        
+        for (Profissional p  : getEquipe()){
+
+            if (p.getTipoProfissional() == tipo) {
+                return true;
+            }  
+        }
+        return false;
     }
 
     //heranças para subclasses 

@@ -19,6 +19,11 @@ public class AmbulanciaSimples extends Veiculo{
     public boolean isOxigenio(){
         return oxigenio;
     }
+
+    @Override
+    public boolean temOxigenio() { 
+        return true; 
+    } 
     
     
 }

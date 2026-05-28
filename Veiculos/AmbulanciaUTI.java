@@ -22,6 +22,11 @@ public class AmbulanciaUTI extends Veiculo{
     public boolean isEquipeMediaFixa (){
         return equipeMediaFixa ;
     }
+    
+    @Override
+    public boolean isUTI() { 
+        return true; 
+    }
 
 
     

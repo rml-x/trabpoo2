@@ -26,6 +26,16 @@ public abstract class Veiculo {
         return disponivel;
    }
 
+    public boolean isUTI() { 
+        return false; 
+    }
+    public boolean temOxigenio() { 
+        return false; 
+    }
+    public boolean temRefrigeracao() { 
+        return false; 
+    }
+
 
     //metodos
    public void ocupar() {
@@ -34,6 +44,8 @@ public abstract class Veiculo {
    public void liberar(){
         disponivel =  true;
    }
+
+  
    
 
 

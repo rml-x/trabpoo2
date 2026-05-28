@@ -20,6 +20,10 @@ public class VanRefrigerada extends Veiculo{
     public boolean isControleTemperatura(){
         return controleTemperatura;
     }
+
+    public boolean temRefrigeracao() { 
+        return true; 
+    }
     
     //TODO: add metodo de verificar temperatura
     
