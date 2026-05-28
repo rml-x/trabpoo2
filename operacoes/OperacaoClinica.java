@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import enums.NivelClinico;
 import enums.Status;
 import enums.TipoProfissional;
 import interfaces.*;
@@ -116,7 +115,7 @@ abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Prior
         }
     }
 
-
+    //auxiliar validação
     protected boolean equipeContem(TipoProfissional tipo){
         
         for (Profissional p  : getEquipe()){

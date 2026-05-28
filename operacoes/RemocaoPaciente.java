@@ -5,6 +5,7 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import enums.NivelClinico;
+import enums.TipoProfissional;
 
 public class RemocaoPaciente extends OperacaoClinica{
 
@@ -53,9 +54,8 @@ public class RemocaoPaciente extends OperacaoClinica{
         String informacaoPaciente = String.format("\t Paciente: %s , Idade: %d \n",getnomePaciente(), getIdade());
         String logOperacao = String.format("\t Solicitante: %s, Data_Hora_Solicitacao: %s \n", getSolicitante(), getDataHoraSolicitacao());
         String tecnicalidades = String.format("\t Nivel: %s, Oxigenio: %s \n UTI Movel: %s, Medico Acompanhante: %s, Custo: %s", getnivel(), isPrecisaOxigenio(), isPrecisaUtiMovel(),isPrecisaMedicoAcompanhante(), calcularCusto());
-        
-        return titulo + informacaoPaciente + logOperacao + obterDescricaoRastreamento() + tecnicalidades;
-        //TODO:add veiculo e equipe
+        String veiculo =String.format("Veiculo designado: %s ", getVeiculo() != null ? getVeiculo().getModelo() : "Não designado");
+        return titulo + informacaoPaciente + logOperacao + obterDescricaoRastreamento() + veiculo + tecnicalidades;
     }
 
     @Override
@@ -95,20 +95,21 @@ public class RemocaoPaciente extends OperacaoClinica{
     @Override
     public boolean validar() {
 
-
+        if (getVeiculo() == null) {
+            return false;
+        }
         if (precisaUtiMovel && !getVeiculo().isUTI()) {
             return false;
         }
         if(precisaOxigenio && !getVeiculo().temOxigenio()){
             return false;
         }
-        if(precisaMedicoAcompanhante ){
-
-        } //TODO:como verificar se tem medico na equipe 
-
-        if (nivel == NivelClinico.CRITICO && !precisaUtiMovel && !precisaMedicoAcompanhante) {
+        if ((nivel == NivelClinico.CRITICO || nivel == NivelClinico.GRAVE) && !equipeContem(TipoProfissional.MEDICO)) {
             return false;
         }
+        if (nivel == NivelClinico.CRITICO && !precisaUtiMovel && !precisaMedicoAcompanhante) return false;
+    
+        return true;
     }
 
 
