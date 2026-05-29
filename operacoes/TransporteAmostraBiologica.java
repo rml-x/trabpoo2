@@ -37,12 +37,12 @@ public class TransporteAmostraBiologica extends OperacaoClinica{
     public String gerarLogAuditoria() {
 
         String titulo = String.format(" Relatorio Transporte de Amostra Biologica - Codigo: %s - Status: %s \n", getCodigo(), getStatus());
-        String informacaoMedicamento = String.format("\t Tipo da Amostra: %s \n", getTipoAmostra());
+        String informacoesAmostraBiologica = String.format("\t Tipo da Amostra: %s \n", getTipoAmostra());
         String logOperacao = String.format("\t Solicitante: %s, Data_Hora_Solicitacao: %s , Nivel: %s \n", getSolicitante(), getDataHoraSolicitacao(),calcularPrioridade());
         String tecnicalidades = String.format("\t Enfermeiro: %s \n Custo: %s", isRiscoBiologico(), calcularCusto());
         String veiculo =String.format("\t Veiculo designado: %s ", getVeiculo() != null ? getVeiculo().getModelo() : "Não designado");
         
-        return titulo + informacaoMedicamento + logOperacao + tecnicalidades + obterDescricaoRastreamento() + veiculo;
+        return titulo + informacoesAmostraBiologica + logOperacao + tecnicalidades + obterDescricaoRastreamento() + veiculo;
     }
 
     @Override
