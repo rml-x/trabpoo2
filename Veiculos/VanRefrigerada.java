@@ -21,10 +21,15 @@ public class VanRefrigerada extends Veiculo{
         return controleTemperatura;
     }
 
+    @Override
     public boolean temRefrigeracao() { 
         return true; 
     }
+    @Override
+    public boolean temperaturaAdequada(double tempMin, double tempMax) {
+        return temperaturaAtual >= tempMin && temperaturaAtual <= tempMax;
+    }
     
-    //TODO: add metodo de verificar temperatura
+    
     
 }

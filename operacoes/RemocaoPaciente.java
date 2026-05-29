@@ -50,11 +50,11 @@ public class RemocaoPaciente extends OperacaoClinica{
 
     @Override
     public String gerarLogAuditoria() {
-        String titulo = String.format("Relatorio Remoção Paciente - Codigo: %s \n", getCodigo());
+        String titulo = String.format("Relatorio Remoção Paciente - Codigo: %s  - Status: %s \n", getCodigo(), getStatus());
         String informacaoPaciente = String.format("\t Paciente: %s , Idade: %d \n",getnomePaciente(), getIdade());
         String logOperacao = String.format("\t Solicitante: %s, Data_Hora_Solicitacao: %s \n", getSolicitante(), getDataHoraSolicitacao());
         String tecnicalidades = String.format("\t Nivel: %s, Oxigenio: %s \n UTI Movel: %s, Medico Acompanhante: %s, Custo: %s", getnivel(), isPrecisaOxigenio(), isPrecisaUtiMovel(),isPrecisaMedicoAcompanhante(), calcularCusto());
-        String veiculo =String.format("Veiculo designado: %s ", getVeiculo() != null ? getVeiculo().getModelo() : "Não designado");
+        String veiculo =String.format("\t Veiculo designado: %s ", getVeiculo() != null ? getVeiculo().getModelo() : "Não designado");
         return titulo + informacaoPaciente + logOperacao + obterDescricaoRastreamento() + veiculo + tecnicalidades;
     }
 

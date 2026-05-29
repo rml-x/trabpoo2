@@ -35,6 +35,9 @@ public abstract class Veiculo {
     public boolean temRefrigeracao() { 
         return false; 
     }
+    public boolean temperaturaAdequada(double tempMin, double tempMax) {
+        return false;
+    }
 
 
     //metodos
