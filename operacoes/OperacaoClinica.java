@@ -1,4 +1,5 @@
 package operacoes;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,7 +11,7 @@ import interfaces.*;
 import profissional.Profissional;
 import veiculos.Veiculo;
 
-abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Priorizavel, Rastreavel {
+public abstract class OperacaoClinica implements Validavel, Custeavel, Auditavel, Priorizavel, Rastreavel {
     private int codigo; // pq n usar UID?
     private String origem;
     private String destino;
